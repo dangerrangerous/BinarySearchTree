@@ -2,6 +2,8 @@
 //
 
 #include "stdafx.h"
+#include "BinaryTree.h"
+#include "CustomTypes.h"
 
 
 int main()
