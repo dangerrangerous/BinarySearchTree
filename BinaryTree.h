@@ -1,5 +1,12 @@
 #pragma once
 
+struct TreeNode
+{
+	int nodeData;
+	TreeNode* leftChild;
+	TreeNode* rightChild;
+};
+
 class BinaryTree
 {
 public:
@@ -13,9 +20,11 @@ public:
 	void BreadthFirstTraversal();
 	void InitializeTree();
 	void Insert(int);
-	bool isEmpty();
+	bool IsEmpty();
 
 private:
 	// Private
+	void BreadthFirst(TreeNode*);
+
 	TreeNode* root;
 };
