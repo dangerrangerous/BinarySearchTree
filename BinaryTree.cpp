@@ -1,3 +1,5 @@
+// BinaryTree class implementation
+// Brian Keppinger
 
 #include "stdafx.h"
 #include <iostream>
@@ -98,3 +100,4 @@ bool BinaryTree::IsEmpty()
 {
 	return (root == NULL);
 }
+

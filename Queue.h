@@ -24,7 +24,7 @@ public:
 	void RemoveFront(TreeNode*);
 	bool IsEmpty();
 	void PrintQueue();
-	// void DestroyQueue();
+	void DestroyQueue();
 
 private:
 	QNode* front;
