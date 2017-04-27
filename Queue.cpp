@@ -18,12 +18,12 @@ Queue::Queue(void)
 Queue::~Queue(void)
 {
 	cout << "Destroying queue." << endl;
-	// DestroyQueue();
+	DestroyQueue();
 }
 
 void Queue::InitializeQueue()
 {
-	// DestroyQueue();
+	DestroyQueue();
 }
 
 void Queue::AddToQueue(TreeNode* treeNodePointer)
@@ -90,3 +90,17 @@ void Queue::PrintQueue()
 	}
 
 } // end PrintQueue()
+
+void Queue::DestroyQueue()
+{
+	QNode* temp;
+
+	while (front != NULL)
+	{
+		temp = front;
+		front = front->previous;
+		delete temp;
+	}
+
+	back = NULL;
+} // end DestroyQueue()
