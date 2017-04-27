@@ -1,5 +1,6 @@
 #pragma once
 
+// Can cautiously move this to CustomTypes.h
 struct QNode
 {
 	TreeNode* qTreeNodePointer;
@@ -20,10 +21,10 @@ public:
 	// Public member functions
 	void InitializeQueue();
 	void Enqueue(TreeNode*);
-	void Dequeue(TreeNode*);
+	// void Dequeue(TreeNode*);
 	bool IsEmpty();
-	void PrintQueue();
-	void DestroyQueue();
+	// void PrintQueue();
+	// void DestroyQueue();
 
 private:
 	QNode* front;
