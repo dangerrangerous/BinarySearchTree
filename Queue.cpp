@@ -49,6 +49,32 @@ void Queue::Enqueue(TreeNode* treeNodePointer)
 	}
 } // end Enqueue()
 
+void Queue::RemoveFront(TreeNode* treeNodePointer)
+{
+	QNode* temp;
+	
+	if (IsEmpty())
+		treeNodePointer = nullptr;
+	else
+	{
+		treeNodePointer = front->qTreeNodePointer;
+		temp = front;
+		front = front->previous;
+
+		if (front != NULL)
+		{
+			front->next = NULL;
+			delete temp;
+
+			if (front == NULL)
+			{
+				back = NULL;
+			}
+		}
+	} // end else
+
+} // end RemoveFront()
+
 bool Queue::IsEmpty()
 {
 	return (front == NULL);
