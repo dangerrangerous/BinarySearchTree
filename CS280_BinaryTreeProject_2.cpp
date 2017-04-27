@@ -12,6 +12,9 @@ using namespace std;
 int main()
 {
 	BinaryTree integerTree;
+	Queue q;
+
+	// q.InitializeQueue();
 	integerTree.InitializeTree();
 
 	integerTree.Insert(20);

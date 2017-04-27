@@ -26,7 +26,7 @@ void Queue::InitializeQueue()
 	// DestroyQueue();
 }
 
-void Queue::Enqueue(TreeNode* treeNodePointer)
+void Queue::AddToQueue(TreeNode* treeNodePointer)
 {
 	QNode* newNode;
 
@@ -79,3 +79,14 @@ bool Queue::IsEmpty()
 {
 	return (front == NULL);
 }
+
+void Queue::PrintQueue()
+{
+	QNode* temp = back;
+	while (back->next != NULL)
+	{
+		cout << temp->qTreeNodePointer->nodeData << ' ';
+		temp = temp->next;
+	}
+
+} // end PrintQueue()

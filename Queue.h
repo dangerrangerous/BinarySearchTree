@@ -20,10 +20,10 @@ public:
 
 	// Public member functions
 	void InitializeQueue();
-	void Enqueue(TreeNode*);
+	void AddToQueue(TreeNode*);
 	void RemoveFront(TreeNode*);
 	bool IsEmpty();
-	// void PrintQueue();
+	void PrintQueue();
 	// void DestroyQueue();
 
 private:
