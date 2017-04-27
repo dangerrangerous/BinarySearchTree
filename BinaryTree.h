@@ -12,7 +12,7 @@ public:
 	// Public member functions
 	void BreadthFirstTraversal();
 	void InitializeTree();
-	void Insert();
+	void Insert(int);
 	bool isEmpty();
 
 private:
