@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "CustomTypes.h"
 #include "BinaryTree.h"
+#include "Queue.h"
 #include <iostream>
 
 using namespace std;
