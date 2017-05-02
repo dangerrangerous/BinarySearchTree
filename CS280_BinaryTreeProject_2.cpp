@@ -5,6 +5,7 @@
 #include "CustomTypes.h"
 #include "BinaryTree.h"
 #include "Queue.h"
+#include "LinkedListStack.h"
 #include <iostream>
 
 using namespace std;
