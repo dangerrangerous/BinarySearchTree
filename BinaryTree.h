@@ -21,10 +21,11 @@ public:
 	void InitializeTree();
 	void Insert(int);
 	bool IsEmpty();
+	void IterativeInOrderTraversal();
 
 private:
 	// Private
 	void BreadthFirst(TreeNode*);
-
+	void IterativeInOrder(TreeNode*);
 	TreeNode* root;
 };

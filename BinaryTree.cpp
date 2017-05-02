@@ -97,10 +97,8 @@ void BinaryTree::BreadthFirst(TreeNode* rootPointer)
 		return;
 		
 	Queue q;
-	// what is assigned to treeNodePointer?... 
 	TreeNode* treeNodePointer = nullptr;
 
-// this isn't working...
 	if (rootPointer != NULL)
 	{
 		q.AddToQueue(rootPointer);
