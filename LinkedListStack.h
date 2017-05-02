@@ -19,11 +19,11 @@ public:
 	void InitializeStack();
 	bool IsEmpty();
 	int Size();
-	void Top();
+	int Top();
 	void Push(TreeNode*);
 	void Pop(TreeNode* &);
 	// void Swap();
-	// void DestroyStack();
+	void DestroyStack();
 	// void PrintStack();
 
 private:

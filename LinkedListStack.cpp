@@ -1,4 +1,5 @@
 
+// TODO: some functions need to be changed from void...
 
 #include "stdafx.h"
 #include <iostream>
@@ -23,7 +24,7 @@ LinkedListStack::~LinkedListStack(void)
 
 void LinkedListStack::InitializeStack()
 {
-	// DestroyStack();
+	DestroyStack();
 }
 
 bool LinkedListStack::IsEmpty()
@@ -31,13 +32,25 @@ bool LinkedListStack::IsEmpty()
 	return top == nullptr;
 }
 
+// Return number of elements in stack
 int LinkedListStack::Size()
 {
-	// Return number of elements in stack
+
 }
 
-void LinkedListStack::Top()
+// Return top element of stack
+int LinkedListStack::Top()
 {
+	if (IsEmpty())
+	{
+		cout << "Stack is empty." << endl;
+	}
+	else
+	{
+		cout << top->sTreeNodePointer->nodeData << endl;
+
+		return top->sTreeNodePointer->nodeData;
+	}
 
 }
 
@@ -93,3 +106,17 @@ void LinkedListStack::Pop(TreeNode* &treeNodePointer)
 		}
 	} // end else
 } // end Pop()
+
+void LinkedListStack::DestroyStack()
+{
+	SNode* temp;
+
+	while (top != nullptr)
+	{
+		temp = top;
+		top = top->previous;
+		delete temp;
+	}
+
+	bottom = nullptr;
+}
