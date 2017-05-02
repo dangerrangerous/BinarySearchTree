@@ -20,7 +20,13 @@ public:
 	bool IsEmpty();
 	int Size();
 	void Top();
-	void Push();
-	void Pop();
-	void Swap();
+	void Push(TreeNode*);
+	void Pop(TreeNode* &);
+	// void Swap();
+	// void DestroyStack();
+	// void PrintStack();
+
+private:
+	SNode* top;
+	SNode* bottom;
 };
