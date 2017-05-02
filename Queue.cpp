@@ -50,12 +50,12 @@ void Queue::AddToQueue(TreeNode* treeNodePointer)
 	}
 } // end Enqueue()
 
-void Queue::RemoveFront(TreeNode* treeNodePointer)
+void Queue::RemoveFront(TreeNode* &treeNodePointer)
 {
 	QNode* temp;
 	
 	if (IsEmpty())
-		treeNodePointer = nullptr;
+		treeNodePointer = NULL;
 	else
 	{
 		treeNodePointer = front->qTreeNodePointer;

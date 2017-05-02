@@ -21,7 +21,7 @@ public:
 	// Public member functions
 	void InitializeQueue();
 	void AddToQueue(TreeNode*);
-	void RemoveFront(TreeNode*);
+	void RemoveFront(TreeNode* &);
 	bool IsEmpty();
 	void PrintQueue();
 	void DestroyQueue();

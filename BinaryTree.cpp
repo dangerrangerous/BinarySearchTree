@@ -5,6 +5,7 @@
 #include <iostream>
 #include "CustomTypes.h"
 #include "BinaryTree.h"
+#include "Queue.h"
 
 
 using namespace std;
@@ -90,11 +91,39 @@ void BinaryTree::BreadthFirstTraversal()
 	BreadthFirst(root);
 }
 
-void BinaryTree::BreadthFirst(TreeNode* nodePointer)
+void BinaryTree::BreadthFirst(TreeNode* rootPointer)
 {
-	// do the things
+	if (IsEmpty())
+		return;
+		
+	Queue q;
+	// what is assigned to treeNodePointer?... 
+	TreeNode* treeNodePointer = nullptr;
 
-}
+// this isn't working...
+	if (rootPointer != NULL)
+	{
+		q.AddToQueue(rootPointer);
+
+		while (!q.IsEmpty())
+		{
+			// does it make sense to remove the node before printing  it's nodeData?
+			q.RemoveFront(treeNodePointer);
+			// could do something like treeNodePointer = q.Front().
+			cout << treeNodePointer->nodeData << " ";
+			
+			if (treeNodePointer->leftChild != NULL)
+			{
+				q.AddToQueue(treeNodePointer->leftChild);
+			}
+			if (treeNodePointer->rightChild != NULL)
+			{
+				q.AddToQueue(treeNodePointer->rightChild);
+			}
+		} // end while
+	} // end if
+
+} // end BreadthFirst()
 
 bool BinaryTree::IsEmpty()
 {
