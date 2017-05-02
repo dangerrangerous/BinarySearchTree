@@ -14,8 +14,10 @@ int main()
 {
 	BinaryTree integerTree;
 	Queue q;
+	LinkedListStack shtack;
 
-	// q.InitializeQueue();
+	q.InitializeQueue();
+	shtack.InitializeStack();
 	integerTree.InitializeTree();
 
 	integerTree.Insert(20);
@@ -29,6 +31,8 @@ int main()
 	cout << endl;
 	cout << "Breadth first traversal (level order traversal):" << endl;
 	integerTree.BreadthFirstTraversal();
+
+	cout << endl;
 
     return 0;
 }
