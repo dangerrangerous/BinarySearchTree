@@ -33,7 +33,7 @@ bool LinkedListStack::IsEmpty()
 
 int LinkedListStack::Size()
 {
-
+	// Return number of elements in stack
 }
 
 void LinkedListStack::Top()
@@ -41,9 +41,28 @@ void LinkedListStack::Top()
 
 }
 
+// Adds node to top of stack
 void LinkedListStack::Push(TreeNode* treeNodePointer)
 {
+	// Initialize newNode and set it's pointers
+	SNode* newNode;
+	// when using 'new' remember to deallocate
+	newNode = new SNode;
+	newNode->sTreeNodePointer = treeNodePointer;
+	newNode->previous = nullptr;
+	newNode->next = nullptr;
 
+	if (IsEmpty())
+	{
+		top = newNode;
+		bottom = newNode;
+	}
+	else
+	{
+		top->next = newNode;
+		newNode->previous = top;
+		top = newNode;
+	}
 }
 
 void LinkedListStack::Pop(TreeNode* &treeNodePointer)
