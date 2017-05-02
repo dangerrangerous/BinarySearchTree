@@ -65,7 +65,31 @@ void LinkedListStack::Push(TreeNode* treeNodePointer)
 	}
 }
 
+// Removes top element of the stack, reducing its size by one.
+// I prefer that Pop() returns the value of the item removed.
 void LinkedListStack::Pop(TreeNode* &treeNodePointer)
 {
+	SNode* temp;
 	
-}
+	if (IsEmpty())
+	{
+		cout << "Stack is empty." << endl;
+	}
+	else
+	{
+		treeNodePointer = top->sTreeNodePointer;
+		temp = top;
+		top = top->previous;
+
+		if (top != nullptr)
+		{
+			top->next = nullptr;
+			delete temp;
+
+			if (top == nullptr)
+			{
+				bottom = nullptr;
+			}
+		}
+	} // end else
+} // end Pop()
