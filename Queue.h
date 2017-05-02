@@ -26,6 +26,9 @@ public:
 	void PrintQueue();
 	void DestroyQueue();
 
+	// Public member variables
+	int stackSize;
+
 private:
 	QNode* front;
 	QNode* back;
