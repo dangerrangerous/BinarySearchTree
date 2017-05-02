@@ -22,7 +22,7 @@ LinkedListStack::LinkedListStack(void)
 LinkedListStack::~LinkedListStack(void)
 {
 	cout << "Destroying stack." << endl;
-	// DestroyStack();
+	DestroyStack();
 }
 
 void LinkedListStack::InitializeStack()
@@ -135,4 +135,17 @@ void LinkedListStack::DestroyStack()
 	}
 
 	bottom = nullptr;
+}
+
+void LinkedListStack::PrintStack()
+{
+	SNode* temp;
+	temp = top;
+	cout << "Printing stack: " << endl;
+
+	while (top->previous != nullptr)
+	{
+		cout << temp->sTreeNodePointer->nodeData << ' ' << endl;
+		temp = top->previous;
+	}
 }

@@ -24,7 +24,7 @@ public:
 	void Pop(TreeNode* &);
 	// void Swap();
 	void DestroyStack();
-	// void PrintStack();
+	void PrintStack();
 
 private:
 	SNode* top;
