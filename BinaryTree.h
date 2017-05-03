@@ -27,5 +27,6 @@ private:
 	// Private
 	void BreadthFirst(TreeNode*);
 	void IterativeInOrder(TreeNode*);
+
 	TreeNode* root;
 };

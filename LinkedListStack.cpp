@@ -51,8 +51,10 @@ int LinkedListStack::Size()
 	return stackSize;
 }
 
+// TODO: fix this so that it actually returns the top object
+// and not just nodeData
 // Return top element of stack
-int LinkedListStack::Top()
+SNode LinkedListStack::Top()
 {
 	if (IsEmpty())
 	{
@@ -60,9 +62,9 @@ int LinkedListStack::Top()
 	}
 	else
 	{
-		cout << top->sTreeNodePointer->nodeData << endl;
+		cout << "Top of stack: " << top->sTreeNodePointer->nodeData << endl;
 
-		return top->sTreeNodePointer->nodeData;
+		return *top;
 	}
 
 }

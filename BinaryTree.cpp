@@ -6,10 +6,9 @@
 #include "CustomTypes.h"
 #include "BinaryTree.h"
 #include "Queue.h"
-
+#include "LinkedListStack.h"
 
 using namespace std;
-
 
 // Default constructor
 BinaryTree::BinaryTree(void)
@@ -105,7 +104,6 @@ void BinaryTree::BreadthFirst(TreeNode* rootPointer)
 
 		while (!q.IsEmpty())
 		{
-			// does it make sense to remove the node before printing  it's nodeData?
 			q.RemoveFront(treeNodePointer);
 			// could do something like treeNodePointer = q.Front().
 			cout << treeNodePointer->nodeData << " ";
@@ -128,3 +126,41 @@ bool BinaryTree::IsEmpty()
 	return (root == NULL);
 }
 
+void BinaryTree::IterativeInOrderTraversal()
+{
+	IterativeInOrder(root);
+}
+
+void BinaryTree::IterativeInOrder(TreeNode* rootPointer)
+{
+	TreeNode* current = rootPointer;
+	TreeNode* top = nullptr;
+	LinkedListStack shtack;
+
+	bool iterate = true;
+
+	while (iterate)
+	{
+		// Iterate until reach left most node
+		if (current != nullptr)
+		{
+			shtack.Push(current);
+			current = current->leftChild;
+		}
+		else
+		{
+			if (!shtack.IsEmpty())
+			{
+				// this needs work
+				top->nodeData = shtack.Top();
+				cout << top->nodeData << endl;
+				current = top->rightChild;
+				shtack.Pop(top);
+			}
+			else
+			{
+				iterate = false;
+			}
+		} // end else
+	} // end while
+}

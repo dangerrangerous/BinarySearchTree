@@ -19,7 +19,7 @@ public:
 	void InitializeStack();
 	bool IsEmpty();
 	int Size();
-	int Top();
+	SNode Top();
 	void Push(TreeNode*);
 	void Pop(TreeNode* &);
 	// void Swap();

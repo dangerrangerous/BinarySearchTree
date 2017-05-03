@@ -34,6 +34,9 @@ int main()
 
 	cout << endl;
 
+	cout << "attempting in order traversal.." << endl;
+	integerTree.IterativeInOrderTraversal();
+
     return 0;
 }
 
