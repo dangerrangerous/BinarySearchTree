@@ -54,19 +54,14 @@ int LinkedListStack::Size()
 // TODO: fix this so that it actually returns the top object
 // and not just nodeData
 // Return top element of stack
-SNode LinkedListStack::Top()
+SNode* LinkedListStack::Top()
 {
 	if (IsEmpty())
 	{
 		cout << "Stack is empty." << endl;
 	}
-	else
-	{
-		cout << "Top of stack: " << top->sTreeNodePointer->nodeData << endl;
 
-		return *top;
-	}
-
+	return top;
 }
 
 // Adds node to top of stack
@@ -97,17 +92,15 @@ void LinkedListStack::Push(TreeNode* treeNodePointer)
 
 // Removes top element of the stack, reducing its size by one.
 // I prefer that Pop() returns the value of the item removed.
-void LinkedListStack::Pop(TreeNode* &treeNodePointer)
+void LinkedListStack::Pop()
 {
 	SNode* temp;
-	
 	if (IsEmpty())
 	{
 		cout << "Stack is empty." << endl;
 	}
 	else
 	{
-		treeNodePointer = top->sTreeNodePointer;
 		temp = top;
 		top = top->previous;
 

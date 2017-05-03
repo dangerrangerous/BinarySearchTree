@@ -19,9 +19,10 @@ public:
 	void InitializeStack();
 	bool IsEmpty();
 	int Size();
-	SNode Top();
+	SNode* Top();
 	void Push(TreeNode*);
-	void Pop(TreeNode* &);
+	// think Pop() needs fixed
+	void Pop();
 	// void Swap();
 	void DestroyStack();
 	void PrintStack();

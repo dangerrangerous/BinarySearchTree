@@ -15,7 +15,7 @@ Queue::Queue(void)
 	back = nullptr;
 }
 
-// Default destructor
+// Deoault destructor
 Queue::~Queue(void)
 {
 	cout << "Destroying queue." << endl;
