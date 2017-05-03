@@ -108,12 +108,13 @@ void LinkedListStack::Pop()
 		{
 			top->next = nullptr;
 			delete temp;
-
-			if (top == nullptr)
-			{
-				bottom = nullptr;
-			}
 		}
+
+		if (top == nullptr)
+		{
+			bottom = nullptr;
+		}
+
 	} // end else
 	stackSize--;
 } // end Pop()
