@@ -173,3 +173,32 @@ void BinaryTree::IterativeInOrder(TreeNode* rootPointer)
 		}
 	} // end while iterate
 } // end Iterative In Order Traversal
+
+void BinaryTree::IterativePreOrderTraversal()
+{
+	IterativePreOrder(root);
+}
+
+void BinaryTree::IterativePreOrder(TreeNode* rootPointer)
+{
+	TreeNode* current = rootPointer;
+	LinkedListStack shtack;
+
+	shtack.Push(current);
+
+	while (!shtack.IsEmpty())
+	{
+		current = shtack.Top()->sTreeNodePointer;
+		cout << current->nodeData << " ";
+
+		if (current->rightChild != nullptr)
+		{
+			shtack.Push(current->rightChild);
+		}
+		
+		if (current->leftChild != nullptr)
+		{
+			shtack.Push(current->leftChild);
+		}
+	}
+}
