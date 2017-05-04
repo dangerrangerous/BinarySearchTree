@@ -30,6 +30,7 @@ public:
 	// int Max(int, int);
 	int TreeHeight();
 	int TreeNodeCount();
+	int TreeLeafCount();
 
 private:
 	// Private
@@ -40,6 +41,7 @@ private:
 	
 	int Height(TreeNode*);
 	int NodeCount(TreeNode*);
+	int LeafCount(TreeNode*);
 
 	TreeNode* root;
 };

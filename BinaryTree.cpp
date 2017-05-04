@@ -301,3 +301,27 @@ int BinaryTree::NodeCount(TreeNode* rootPointer)
 					NodeCount(rootPointer->rightChild));
 	}
 }
+
+int BinaryTree::TreeLeafCount()
+{
+	return LeafCount(root);
+}
+
+int BinaryTree::LeafCount(TreeNode* rootPointer)
+{
+	int numberOfLeaves = 0;
+	if (rootPointer->leftChild != nullptr)
+	{
+		numberOfLeaves += LeafCount(rootPointer->leftChild);
+	}
+	if (rootPointer->leftChild == nullptr && rootPointer->rightChild == nullptr)
+	{
+		numberOfLeaves += 1;
+	}
+	if (rootPointer->rightChild != nullptr)
+	{
+		numberOfLeaves += LeafCount(rootPointer->rightChild);
+	}
+
+	return numberOfLeaves;
+} // end LeafCount()

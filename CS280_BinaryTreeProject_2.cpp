@@ -55,6 +55,9 @@ int main()
 	cout << "Node count:" << endl;
 	cout << integerTree.TreeNodeCount() << endl;
 
+	cout << "Leaf count: " << endl;
+	cout << integerTree.TreeLeafCount() << endl;
+
     return 0;
 }
 
