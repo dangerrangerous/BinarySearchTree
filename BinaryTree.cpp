@@ -240,12 +240,37 @@ void BinaryTree::IterativePostOrder(TreeNode* rootPointer)
 
 // Searches tree for key value, returns true and node data if found,
 // false otherwise.
-/*
-bool BinaryTree::IsInTree(int key)
+int BinaryTree::SearchTree(int key)
 {
-
+	return IsInTree(root, key);
 }
-*/
+
+int BinaryTree::IsInTree(TreeNode* rootPointer, int key)
+{
+	TreeNode* treeNode = rootPointer;
+
+	if (treeNode == nullptr)
+	{
+		return false;
+	}
+	else
+	{
+		if (key == treeNode->nodeData)
+		{
+			return true, treeNode->nodeData;
+		}
+		else if (key > treeNode->nodeData)
+		{
+			IsInTree(treeNode->rightChild, key);
+		}
+		else if (key < treeNode->nodeData)
+		{
+			IsInTree(treeNode->leftChild, key);
+
+		}
+	}
+}
+
 // Delete the item from the tree if it exists.
 /*
 void BinaryTree::Delete(int key)

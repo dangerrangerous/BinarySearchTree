@@ -25,12 +25,12 @@ public:
 	void IterativePreOrderTraversal();
 	void IterativePostOrderTraversal();
 
-	bool IsInTree(int);
 	void Delete(int);
 	// int Max(int, int);
 	int TreeHeight();
 	int TreeNodeCount();
 	int TreeLeafCount();
+	int SearchTree(int);
 
 private:
 	// Private
@@ -42,6 +42,7 @@ private:
 	int Height(TreeNode*);
 	int NodeCount(TreeNode*);
 	int LeafCount(TreeNode*);
+	int IsInTree(TreeNode*, int);
 
 	TreeNode* root;
 };
