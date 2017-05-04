@@ -253,7 +253,19 @@ void BinaryTree::Delete(int key)
 
 }
 */
-
+/*
+int BinaryTree::Max(int argument1, int argument2)
+{
+	if (argument1 >= argument1)
+	{
+		return argument1;
+	}
+	else
+	{
+		return argument2;
+	}
+}
+*/
 int BinaryTree::TreeHeight()
 {
 	return Height(root);
@@ -271,9 +283,21 @@ int BinaryTree::Height(TreeNode* rootPointer)
 						Height(rootPointer->rightChild));
 	}
 }
-/*
+
 int BinaryTree::TreeNodeCount()
 {
 	return NodeCount(root);
 }
-*/
+
+int BinaryTree::NodeCount(TreeNode* rootPointer)
+{
+	if (rootPointer == nullptr)
+	{
+		return 0;
+	}
+	else
+	{
+		return 1 + (NodeCount(rootPointer->leftChild) + 
+					NodeCount(rootPointer->rightChild));
+	}
+}

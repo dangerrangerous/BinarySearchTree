@@ -27,6 +27,7 @@ public:
 
 	bool IsInTree(int);
 	void Delete(int);
+	// int Max(int, int);
 	int TreeHeight();
 	int TreeNodeCount();
 

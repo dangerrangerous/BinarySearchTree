@@ -51,6 +51,10 @@ int main()
 
 	cout << "Tree height:" << endl;
 	cout <<	integerTree.TreeHeight() << endl;
+
+	cout << "Node count:" << endl;
+	cout << integerTree.TreeNodeCount() << endl;
+
     return 0;
 }
 
