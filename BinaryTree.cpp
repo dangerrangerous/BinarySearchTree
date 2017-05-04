@@ -172,32 +172,4 @@ void BinaryTree::IterativeInOrder(TreeNode* rootPointer)
 			iterate = false;
 		}
 	} // end while iterate
-	/*
-	bool iterate = true;
-
-	while (iterate)
-	{
-		// Iterate until reach left most node
-		if (current != nullptr)
-		{
-			shtack.Push(current);
-			current = current->leftChild;
-		}
-		else
-		{
-			if (!shtack.IsEmpty())
-			{
-				// this needs work
-				// top->nodeData = shtack.Top();
-				// cout << top->nodeData << endl;
-				// current = top->rightChild;
-				// shtack.Pop(top);
-			}
-			else
-			{
-				iterate = false;
-			}
-		} // end else
-	} // end while
-	*/
-}
+} // end Iterative In Order Traversal
