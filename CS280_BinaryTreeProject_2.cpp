@@ -59,8 +59,15 @@ int main()
 	cout << integerTree.TreeLeafCount() << endl;
 
 	cout << "Search tree: " << endl;
-	cout << integerTree.SearchTree(42);
+	cout << integerTree.SearchTree(42) << endl;
 	
+	cout << "Delete node: " << endl;
+	integerTree.DeleteItem();
+
+	cout << "Iterative in order traversal." << endl;
+	integerTree.IterativeInOrderTraversal();
+	// integerTree.DeleteItem(60);
+
     return 0;
 }
 

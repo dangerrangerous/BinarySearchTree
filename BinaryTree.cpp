@@ -278,11 +278,14 @@ void BinaryTree::DeleteItem(int key)
 }
 // Delete the item from the tree if it exists.
 // would be nice to be able to use the search function
-void BinaryTree::Delete(TreeNode* rootPointer, int key)
+TreeNode* BinaryTree::Delete(TreeNode* rootPointer, int key)
 {
 	TreeNode* current = rootPointer;
 	TreeNode* previous = current;
-	// Search for the node 
+
+	if (rootPointer == nullptr) return rootPointer;
+	// Search for the node, iterative - not implemented
+	/*
 	while (current->nodeData != key)
 	{
 		
@@ -337,9 +340,58 @@ void BinaryTree::Delete(TreeNode* rootPointer, int key)
 			previous->rightChild = current->rightChild;
 			delete current;
 		}
+
+
+	} // end else if
+	*/
+	// if key is smaller than node
+	if (key < current->nodeData)
+	{
+		current->leftChild = Delete(current->leftChild, key);
+	}
+	// if key is larger than node
+	if (key > current->nodeData)
+	{
+		current->rightChild = Delete(current->rightChild, key);
+	}
+	// if key is the same as node
+	else
+	{
+		// if one child or no child
+		if (current->leftChild == nullptr)
+		{
+			TreeNode* temp = current->rightChild;
+			delete current;
+			return temp;
+		}
+		else if (current->rightChild == nullptr)
+		{
+			TreeNode* temp = current->leftChild;
+			delete current;
+			return temp;
+		}
+
+		// Node with two children:
+		// Find the successor node to replace the deleted node
+		TreeNode* temp = FindMin(current->rightChild);
+
+		current->nodeData = temp->nodeData;
+
+		current->rightChild = Delete(current->rightChild, key);
 	}
 
-	// Todo: Delete node with two children
+	return current;
+}
+
+TreeNode* BinaryTree::FindMin(TreeNode* rootPointer)
+{
+	TreeNode* current = rootPointer;
+	while (current->leftChild != nullptr)
+	{
+		current = current->leftChild;
+	}
+
+	return current;
 }
 
 /*

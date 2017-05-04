@@ -43,7 +43,9 @@ private:
 	int NodeCount(TreeNode*);
 	int LeafCount(TreeNode*);
 	int IsInTree(TreeNode*, int);
-	void Delete(TreeNode*, int);
+
+	TreeNode* Delete(TreeNode*, int);
+	TreeNode* FindMin(TreeNode*);
 
 	TreeNode* root;
 };
