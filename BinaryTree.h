@@ -25,7 +25,7 @@ public:
 	void IterativePreOrderTraversal();
 	void IterativePostOrderTraversal();
 
-	void Delete(int);
+	void DeleteItem(int);
 	// int Max(int, int);
 	int TreeHeight();
 	int TreeNodeCount();
@@ -43,6 +43,7 @@ private:
 	int NodeCount(TreeNode*);
 	int LeafCount(TreeNode*);
 	int IsInTree(TreeNode*, int);
+	void Delete(TreeNode*, int);
 
 	TreeNode* root;
 };

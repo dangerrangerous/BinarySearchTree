@@ -271,13 +271,15 @@ int BinaryTree::IsInTree(TreeNode* rootPointer, int key)
 	}
 }
 
-// Delete the item from the tree if it exists.
-/*
-void BinaryTree::Delete(int key)
+void BinaryTree::DeleteItem(int key)
 {
-
+	Delete(root, key);
 }
-*/
+// Delete the item from the tree if it exists.
+void BinaryTree::Delete(TreeNode* rootPointer, int key)
+{
+	
+}
 /*
 int BinaryTree::Max(int argument1, int argument2)
 {
