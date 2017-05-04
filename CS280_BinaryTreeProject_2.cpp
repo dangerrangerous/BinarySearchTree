@@ -32,10 +32,17 @@ int main()
 	cout << "Breadth first traversal (level order traversal):" << endl;
 	integerTree.BreadthFirstTraversal();
 
-	cout << endl;
+	cout << endl << endl;
 
-	cout << "attempting in order traversal.." << endl;
+	cout << "Iterative in order traversal:" << endl;
 	integerTree.IterativeInOrderTraversal();
+
+	cout << endl << endl;
+
+	cout << "Iterative pre order traversal:" << endl;
+	integerTree.IterativePreOrderTraversal();
+
+	cout << endl << endl;
 
     return 0;
 }

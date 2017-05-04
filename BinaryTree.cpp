@@ -190,6 +190,7 @@ void BinaryTree::IterativePreOrder(TreeNode* rootPointer)
 	{
 		current = shtack.Top()->sTreeNodePointer;
 		cout << current->nodeData << " ";
+		shtack.Pop();
 
 		if (current->rightChild != nullptr)
 		{
