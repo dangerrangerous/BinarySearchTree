@@ -239,7 +239,8 @@ void BinaryTree::IterativePostOrder(TreeNode* rootPointer)
 }
 
 // Searches tree for key value, returns true and node data if found,
-// false otherwise.
+// false otherwise. I would prefer that it returned the node and not
+// just the node data so that it can be used by the delete function.
 int BinaryTree::SearchTree(int key)
 {
 	return IsInTree(root, key);
@@ -276,10 +277,71 @@ void BinaryTree::DeleteItem(int key)
 	Delete(root, key);
 }
 // Delete the item from the tree if it exists.
+// would be nice to be able to use the search function
 void BinaryTree::Delete(TreeNode* rootPointer, int key)
 {
-	
+	TreeNode* current = rootPointer;
+	TreeNode* previous = current;
+	// Search for the node 
+	while (current->nodeData != key)
+	{
+		
+		if (key < current->nodeData)
+		{
+			previous = current;
+			current = current->leftChild;
+		}
+		else
+		{
+			previous = current;
+			current = current->rightChild;
+		}
+	}
+
+	// found node to delete
+	// if node has no children, delete it
+	if (current->leftChild == nullptr && current->rightChild == nullptr)
+	{
+		// double check if tree is empty.
+		if (current == rootPointer)
+		{
+			root = nullptr;
+		}
+		else if(current == previous->leftChild)
+		{
+			// disconnect previous node
+			previous->leftChild = nullptr;
+			delete current;
+		}
+		else
+		{
+			previous->rightChild = nullptr;
+			delete current;
+		}
+	} // end if 
+	// Delete node with one child
+	else if (current->rightChild == nullptr)
+	{
+		if (current == rootPointer)
+		{
+			rootPointer = current->leftChild;
+			delete current;
+		}
+		else if (current = previous->leftChild)
+		{
+			previous->leftChild = current->leftChild;
+			delete current;
+		}
+		else
+		{
+			previous->rightChild = current->rightChild;
+			delete current;
+		}
+	}
+
+	// Todo: Delete node with two children
 }
+
 /*
 int BinaryTree::Max(int argument1, int argument2)
 {
