@@ -7,6 +7,7 @@
 #include "BinaryTree.h"
 #include "Queue.h"
 #include "LinkedListStack.h"
+#include <algorithm>
 
 using namespace std;
 
@@ -236,3 +237,43 @@ void BinaryTree::IterativePostOrder(TreeNode* rootPointer)
 	
 	stackTwo.PrintStack();
 }
+
+// Searches tree for key value, returns true and node data if found,
+// false otherwise.
+/*
+bool BinaryTree::IsInTree(int key)
+{
+
+}
+*/
+// Delete the item from the tree if it exists.
+/*
+void BinaryTree::Delete(int key)
+{
+
+}
+*/
+
+int BinaryTree::TreeHeight()
+{
+	return Height(root);
+}
+
+int BinaryTree::Height(TreeNode* rootPointer)
+{
+	if (rootPointer == nullptr)
+	{
+		return 0;
+	}
+	else
+	{
+		return 1 + max(Height(rootPointer->leftChild), 
+						Height(rootPointer->rightChild));
+	}
+}
+/*
+int BinaryTree::TreeNodeCount()
+{
+	return NodeCount(root);
+}
+*/

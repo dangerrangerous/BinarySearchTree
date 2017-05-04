@@ -49,6 +49,8 @@ int main()
 
 	cout << endl << endl;
 
+	cout << "Tree height:" << endl;
+	cout <<	integerTree.TreeHeight() << endl;
     return 0;
 }
 
