@@ -21,7 +21,7 @@ LinkedListStack::LinkedListStack(void)
 // Default destructor
 LinkedListStack::~LinkedListStack(void)
 {
-	cout << "Destroying stack." << endl;
+	// cout << "Destroying stack." << endl;
 	DestroyStack();
 }
 
@@ -137,11 +137,14 @@ void LinkedListStack::PrintStack()
 {
 	SNode* temp;
 	temp = top;
-	cout << "Printing stack: " << endl;
+	// cout << "Printing stack: " << endl;
 
-	while (top->previous != nullptr)
+	while (temp->previous != nullptr)
 	{
-		cout << temp->sTreeNodePointer->nodeData << ' ' << endl;
+		cout << temp->sTreeNodePointer->nodeData << ' ';
 		temp = top->previous;
+		top = temp;
 	}
+	// print last item in the stack
+	cout << temp->sTreeNodePointer->nodeData << ' ';
 }

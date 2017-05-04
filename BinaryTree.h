@@ -23,12 +23,14 @@ public:
 	bool IsEmpty();
 	void IterativeInOrderTraversal();
 	void IterativePreOrderTraversal();
+	void IterativePostOrderTraversal();
 
 private:
 	// Private
 	void BreadthFirst(TreeNode*);
 	void IterativeInOrder(TreeNode*);
 	void IterativePreOrder(TreeNode*);
+	void IterativePostOrder(TreeNode*);
 
 	TreeNode* root;
 };

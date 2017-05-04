@@ -44,6 +44,11 @@ int main()
 
 	cout << endl << endl;
 
+	cout << "Iterative post order traversal:" << endl;
+	integerTree.IterativePostOrderTraversal();
+
+	cout << endl << endl;
+
     return 0;
 }
 

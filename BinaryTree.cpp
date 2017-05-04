@@ -140,7 +140,7 @@ void BinaryTree::IterativeInOrder(TreeNode* rootPointer)
 	
 	shtack.Push(current);
 	
-	cout << "Iterative In Order Traversal with Stack." << endl;
+	// cout << "Iterative In Order Traversal with Stack." << endl;
 	while (iterate)
 	{
 		while (current != nullptr)
@@ -201,5 +201,38 @@ void BinaryTree::IterativePreOrder(TreeNode* rootPointer)
 		{
 			shtack.Push(current->leftChild);
 		}
+	} // end while
+} // end Iterative PreOrder()
+
+void BinaryTree::IterativePostOrderTraversal()
+{
+	IterativePostOrder(root);
+}
+
+void BinaryTree::IterativePostOrder(TreeNode* rootPointer)
+{
+	TreeNode* current = rootPointer;
+	LinkedListStack stackOne;
+	LinkedListStack stackTwo;
+
+	stackOne.Push(current);
+	
+	while (!stackOne.IsEmpty())
+	{
+		current = stackOne.Top()->sTreeNodePointer;
+		stackTwo.Push(current);
+		stackOne.Pop();
+		
+		if (current->leftChild != nullptr)
+		{
+			stackOne.Push(current->leftChild);
+		}
+
+		if (current->rightChild != nullptr)
+		{
+			stackOne.Push(current->rightChild);
+		}
 	}
+	
+	stackTwo.PrintStack();
 }
