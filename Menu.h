@@ -1,4 +1,7 @@
 #pragma once
+// Menu Header file
+// Brian Keppinger
+
 #include <string>
 #include "stdafx.h"
 #include "CustomTypes.h"

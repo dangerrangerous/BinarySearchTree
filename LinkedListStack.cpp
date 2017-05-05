@@ -1,5 +1,5 @@
-
-// TODO: some functions need to be changed from void...
+// LinkedList implementation
+// Brian Keppinger
 
 #include "stdafx.h"
 #include <iostream>
@@ -35,8 +35,7 @@ bool LinkedListStack::IsEmpty()
 	return top == nullptr;
 }
 
-// Return number of elements in stack
-// Since it doesn't actually traverse the stack it potentially incorrect.
+// Return number of elements in stack.
 int LinkedListStack::Size()
 {
 	if (IsEmpty())
@@ -51,9 +50,7 @@ int LinkedListStack::Size()
 	return stackSize;
 }
 
-// TODO: fix this so that it actually returns the top object
-// and not just nodeData
-// Return top element of stack
+// Return top element of stack.
 SNode* LinkedListStack::Top()
 {
 	if (IsEmpty())
@@ -88,10 +85,9 @@ void LinkedListStack::Push(TreeNode* treeNodePointer)
 	}
 
 	stackSize++;
-}
+} // end Push()
 
 // Removes top element of the stack, reducing its size by one.
-// I prefer that Pop() returns the value of the item removed.
 void LinkedListStack::Pop()
 {
 	SNode* temp;
@@ -131,7 +127,7 @@ void LinkedListStack::DestroyStack()
 	}
 
 	bottom = nullptr;
-}
+} // end DestroyStack()
 
 void LinkedListStack::PrintStack()
 {
@@ -147,4 +143,4 @@ void LinkedListStack::PrintStack()
 	}
 	// print last item in the stack
 	cout << temp->sTreeNodePointer->nodeData << ' ';
-}
+} // end PrintStack()

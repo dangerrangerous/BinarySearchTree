@@ -1,12 +1,7 @@
 #pragma once
-/*
-struct TreeNode
-{
-	int nodeData;
-	TreeNode* leftChild;
-	TreeNode* rightChild;
-};
-*/
+// BinaryTree header file
+// Brian Keppinger
+
 class BinaryTree
 {
 public:
@@ -27,7 +22,6 @@ public:
 	void DestroyTree();
 
 	void DeleteItem(int);
-	// int Max(int, int);
 	int TreeHeight();
 	int TreeNodeCount();
 	int TreeLeafCount();

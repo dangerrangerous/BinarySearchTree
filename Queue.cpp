@@ -1,5 +1,5 @@
 // Queue class implementation
-
+// Brian Keppinger
 
 #include "stdafx.h"
 #include <iostream>

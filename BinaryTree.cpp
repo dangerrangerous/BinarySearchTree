@@ -152,7 +152,6 @@ void BinaryTree::IterativeInOrder(TreeNode* rootPointer)
 
 		if (current == nullptr)
 		{
-			// fix Pop()
 			current = shtack.Top()->sTreeNodePointer;
 			shtack.Pop();
 
@@ -170,7 +169,7 @@ void BinaryTree::IterativeInOrder(TreeNode* rootPointer)
 			iterate = false;
 		}
 	} // end while iterate
-} // end Iterative In Order Traversal
+} // end IterativeInOrder()
 
 void BinaryTree::IterativePreOrderTraversal()
 {
@@ -200,7 +199,7 @@ void BinaryTree::IterativePreOrder(TreeNode* rootPointer)
 			shtack.Push(current->leftChild);
 		}
 	} // end while
-} // end Iterative PreOrder()
+} // end IterativePreOrder()
 
 void BinaryTree::IterativePostOrderTraversal()
 {
@@ -276,7 +275,8 @@ void BinaryTree::DeleteItem(int key)
 	Delete(root, key);
 }
 // Delete the item from the tree if it exists.
-// would be nice to be able to use the search function
+// Would be nice to be able to use the search function since
+// since this implements its own form of a search.
 TreeNode* BinaryTree::Delete(TreeNode* rootPointer, int key)
 {
 	TreeNode* current = rootPointer;
@@ -334,19 +334,6 @@ TreeNode* BinaryTree::FindMin(TreeNode* rootPointer)
 	return current;
 }
 
-/*
-int BinaryTree::Max(int argument1, int argument2)
-{
-	if (argument1 >= argument1)
-	{
-		return argument1;
-	}
-	else
-	{
-		return argument2;
-	}
-}
-*/
 int BinaryTree::TreeHeight()
 {
 	return Height(root);

@@ -1,5 +1,5 @@
 // CS280_BinaryTreeProject_2.cpp : Defines the entry point for the console application.
-//
+// Brian Keppinger
 
 #include "stdafx.h"
 #include "CustomTypes.h"
@@ -22,6 +22,7 @@ int main()
 	shtack.InitializeStack();
 	integerTree.InitializeTree();
 	
+	// User menu do while loop
 	do
 	{
 		menu.Display();
@@ -29,56 +30,7 @@ int main()
 		menu.ProcessCommand(integerTree);
 	} while (menu.Continue());
 
-	/*
-	integerTree.Insert(20);
-	integerTree.Insert(5);
-	integerTree.Insert(7);
-	integerTree.Insert(34);
-	integerTree.Insert(60);
-	integerTree.Insert(24);
-	integerTree.Insert(42);
-	
-	cout << endl;
-	cout << "Breadth first traversal (level order traversal):" << endl;
-	integerTree.BreadthFirstTraversal();
-
-	cout << endl << endl;
-
-	cout << "Iterative in order traversal:" << endl;
-	integerTree.IterativeInOrderTraversal();
-
-	cout << endl << endl;
-
-	cout << "Iterative pre order traversal:" << endl;
-	integerTree.IterativePreOrderTraversal();
-
-	cout << endl << endl;
-
-	cout << "Iterative post order traversal:" << endl;
-	integerTree.IterativePostOrderTraversal();
-
-	cout << endl << endl;
-
-	cout << "Tree height:" << endl;
-	cout <<	integerTree.TreeHeight() << endl;
-
-	cout << "Node count:" << endl;
-	cout << integerTree.TreeNodeCount() << endl;
-
-	cout << "Leaf count: " << endl;
-	cout << integerTree.TreeLeafCount() << endl;
-
-	cout << "Search tree: " << endl;
-	cout << integerTree.SearchTree(42) << endl;
-	
-	cout << "Delete node: " << endl;
-	integerTree.DeleteItem(34);
-
-	cout << "Iterative in order traversal." << endl;
-	integerTree.IterativeInOrderTraversal();
-	// integerTree.DeleteItem(60);
-	*/
-
+	// Cleanup
 	integerTree.DestroyTree();
 
     return 0;

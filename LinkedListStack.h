@@ -1,4 +1,6 @@
 #pragma once
+// LinkedList header file
+// Brian Keppinger
 
 struct SNode
 {
@@ -21,8 +23,8 @@ public:
 	int Size();
 	SNode* Top();
 	void Push(TreeNode*);
-	// think Pop() needs fixed
 	void Pop();
+	// swap not implemented
 	// void Swap();
 	void DestroyStack();
 	void PrintStack();

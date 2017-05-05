@@ -1,4 +1,6 @@
 #pragma once
+// Custom Types Header file
+// Brian Keppinger
 
 struct TreeNode
 {

@@ -1,4 +1,6 @@
 #pragma once
+// Menu implementation file
+// Brian Keppinger
 
 #include "stdafx.h"
 #include "CustomTypes.h"
@@ -98,8 +100,7 @@ void Menu::ProcessCommand(BinaryTree& binaryTree)
 
 	if (userMenuSelection != Quit)
 	{
-		// Todo: wrap these into interfaces
-		// to hide the implementation details.
+
 		switch (userMenuSelection)
 		{
 		case Insert: 
