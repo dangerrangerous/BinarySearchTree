@@ -6,6 +6,7 @@
 #include "BinaryTree.h"
 #include "Queue.h"
 #include "LinkedListStack.h"
+#include "Menu.h"
 #include <iostream>
 
 using namespace std;
@@ -62,11 +63,15 @@ int main()
 	cout << integerTree.SearchTree(42) << endl;
 	
 	cout << "Delete node: " << endl;
-	integerTree.DeleteItem();
+	integerTree.DeleteItem(34);
 
 	cout << "Iterative in order traversal." << endl;
 	integerTree.IterativeInOrderTraversal();
 	// integerTree.DeleteItem(60);
+	Menu menu;
+	cout << endl;
+
+	menu.Display();
 
     return 0;
 }
