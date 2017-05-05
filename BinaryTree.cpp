@@ -252,12 +252,14 @@ int BinaryTree::IsInTree(TreeNode* rootPointer, int key)
 
 	if (treeNode == nullptr)
 	{
+		cout << key << " is not in the tree." << endl;
 		return false;
 	}
 	else
 	{
 		if (key == treeNode->nodeData)
 		{
+			cout << key << " is in the tree." << endl;
 			return true, treeNode->nodeData;
 		}
 		else if (key > treeNode->nodeData)

@@ -16,11 +16,20 @@ int main()
 	BinaryTree integerTree;
 	Queue q;
 	LinkedListStack shtack;
+	Menu menu;
 
 	q.InitializeQueue();
 	shtack.InitializeStack();
 	integerTree.InitializeTree();
+	
+	do
+	{
+		menu.Display();
+		menu.QueryUser();
+		menu.ProcessCommand(integerTree);
+	} while (menu.Continue());
 
+	/*
 	integerTree.Insert(20);
 	integerTree.Insert(5);
 	integerTree.Insert(7);
@@ -68,10 +77,7 @@ int main()
 	cout << "Iterative in order traversal." << endl;
 	integerTree.IterativeInOrderTraversal();
 	// integerTree.DeleteItem(60);
-	Menu menu;
-	cout << endl;
-
-	menu.Display();
+	*/
 
     return 0;
 }

@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
+#include "stdafx.h"
 #include "CustomTypes.h"
+#include "BinaryTree.h"
 
 using namespace std;
 
@@ -20,7 +22,7 @@ public:
 	void Menu::Display();
 	void Menu::QueryUser();
 	bool Menu::Continue();
-	void Menu::ProcessCommand();
+	void Menu::ProcessCommand(BinaryTree&);
 
 private:
 
