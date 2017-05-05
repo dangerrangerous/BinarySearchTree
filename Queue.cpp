@@ -18,7 +18,6 @@ Queue::Queue(void)
 // Deoault destructor
 Queue::~Queue(void)
 {
-	cout << "Destroying queue." << endl;
 	DestroyQueue();
 }
 

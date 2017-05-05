@@ -24,6 +24,7 @@ public:
 	void IterativeInOrderTraversal();
 	void IterativePreOrderTraversal();
 	void IterativePostOrderTraversal();
+	void DestroyTree();
 
 	void DeleteItem(int);
 	// int Max(int, int);
@@ -38,11 +39,13 @@ private:
 	void IterativeInOrder(TreeNode*);
 	void IterativePreOrder(TreeNode*);
 	void IterativePostOrder(TreeNode*);
+	void Destroy(TreeNode* &);
 	
 	int Height(TreeNode*);
 	int NodeCount(TreeNode*);
 	int LeafCount(TreeNode*);
 	int IsInTree(TreeNode*, int);
+
 
 	TreeNode* Delete(TreeNode*, int);
 	TreeNode* FindMin(TreeNode*);

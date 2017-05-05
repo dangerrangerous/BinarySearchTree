@@ -21,12 +21,12 @@ BinaryTree::BinaryTree(void)
 BinaryTree::~BinaryTree(void)
 {
 	cout << "Destroying binary tree" << endl;
-	// Destroy();
+	DestroyTree();
 }
 
 void BinaryTree::InitializeTree()
 {
-	// Destroy(root)
+	DestroyTree();
 }
 
 void BinaryTree::Insert(int keyValue)
@@ -37,8 +37,8 @@ void BinaryTree::Insert(int keyValue)
 
 	newNode = new TreeNode;
 	newNode->nodeData = keyValue;
-	newNode->leftChild = NULL;
-	newNode->rightChild = NULL;
+	newNode->leftChild = nullptr;
+	newNode->rightChild = nullptr;
 
 	bool iterate = true;
 
@@ -48,7 +48,7 @@ void BinaryTree::Insert(int keyValue)
 	{
 		current = root;
 
-		while (root != NULL && iterate)
+		while (root != nullptr && iterate)
 		{
 			previous = current;
 
@@ -58,13 +58,11 @@ void BinaryTree::Insert(int keyValue)
 				cout << "duplicates are not allowed." << endl;
 				iterate = false;
 			}
-			// go left?
+			// Go left?
 			if (newNode->nodeData < previous->nodeData)
 			{
 				current = current->leftChild;
-				// using nullptr instead of NULL, as NULL is essentially 0 and
-				// can cause problems when working with ints and functions.
-				// nullptr is a type.	
+
 				// If end of the line.
 				if (current == nullptr)
 				{
@@ -106,7 +104,7 @@ void BinaryTree::BreadthFirst(TreeNode* rootPointer)
 		while (!q.IsEmpty())
 		{
 			q.RemoveFront(treeNodePointer);
-			// could do something like treeNodePointer = q.Front().
+
 			cout << treeNodePointer->nodeData << " ";
 			
 			if (treeNodePointer->leftChild != NULL)
@@ -141,7 +139,6 @@ void BinaryTree::IterativeInOrder(TreeNode* rootPointer)
 	
 	shtack.Push(current);
 	
-	// cout << "Iterative In Order Traversal with Stack." << endl;
 	while (iterate)
 	{
 		while (current != nullptr)
@@ -286,66 +283,7 @@ TreeNode* BinaryTree::Delete(TreeNode* rootPointer, int key)
 	TreeNode* previous = current;
 
 	if (rootPointer == nullptr) return rootPointer;
-	// Search for the node, iterative - not implemented
-	/*
-	while (current->nodeData != key)
-	{
-		
-		if (key < current->nodeData)
-		{
-			previous = current;
-			current = current->leftChild;
-		}
-		else
-		{
-			previous = current;
-			current = current->rightChild;
-		}
-	}
-
-	// found node to delete
-	// if node has no children, delete it
-	if (current->leftChild == nullptr && current->rightChild == nullptr)
-	{
-		// double check if tree is empty.
-		if (current == rootPointer)
-		{
-			root = nullptr;
-		}
-		else if(current == previous->leftChild)
-		{
-			// disconnect previous node
-			previous->leftChild = nullptr;
-			delete current;
-		}
-		else
-		{
-			previous->rightChild = nullptr;
-			delete current;
-		}
-	} // end if 
-	// Delete node with one child
-	else if (current->rightChild == nullptr)
-	{
-		if (current == rootPointer)
-		{
-			rootPointer = current->leftChild;
-			delete current;
-		}
-		else if (current = previous->leftChild)
-		{
-			previous->leftChild = current->leftChild;
-			delete current;
-		}
-		else
-		{
-			previous->rightChild = current->rightChild;
-			delete current;
-		}
-
-
-	} // end else if
-	*/
+	
 	// if key is smaller than node
 	if (key < current->nodeData)
 	{
@@ -379,7 +317,7 @@ TreeNode* BinaryTree::Delete(TreeNode* rootPointer, int key)
 
 		current->nodeData = temp->nodeData;
 
-		current->rightChild = Delete(current->rightChild, key);
+		current->rightChild = Delete(current->rightChild, temp->nodeData);
 	}
 
 	return current;
@@ -468,3 +406,20 @@ int BinaryTree::LeafCount(TreeNode* rootPointer)
 
 	return numberOfLeaves;
 } // end LeafCount()
+
+void BinaryTree::DestroyTree()
+{
+	Destroy(root);
+}
+
+void BinaryTree::Destroy(TreeNode* &rootPointer)
+{
+	if (rootPointer != nullptr)
+	{
+		Destroy(rootPointer->leftChild);
+		Destroy(rootPointer->rightChild);
+
+		delete rootPointer;
+		rootPointer = NULL;
+	}
+} // end Destroy()

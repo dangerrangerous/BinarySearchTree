@@ -79,6 +79,8 @@ int main()
 	// integerTree.DeleteItem(60);
 	*/
 
+	integerTree.DestroyTree();
+
     return 0;
 }
 
