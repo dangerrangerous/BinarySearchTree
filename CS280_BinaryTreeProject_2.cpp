@@ -1,4 +1,4 @@
-// CS280_BinaryTreeProject_2.cpp : Defines the entry point for the console application.
+// Binary Search Tree Project
 // Brian Keppinger
 
 #include "stdafx.h"
