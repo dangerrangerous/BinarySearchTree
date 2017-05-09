@@ -1,9 +1,11 @@
-﻿  Queue.cpp
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (CS280_BinaryTreeProject_2.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  stdafx.cpp
+  Queue.cpp
   Menu.cpp
   LinkedListStack.cpp
-  CS280_BinaryTreeProject_2.cpp
+  BinarySearchTreeProject.cpp
   BinaryTree.cpp
   Generating Code...
 c:\users\brian\onedrive\documents\visual studio 2015\projects\cs280_binarytreeproject_2\cs280_binarytreeproject_2\binarytree.cpp(271): warning C4715: 'BinaryTree::IsInTree': not all control paths return a value
-  CS280_BinaryTreeProject_2.vcxproj -> C:\Users\Brian\onedrive\documents\visual studio 2015\Projects\CS280_BinaryTreeProject_2\Debug\CS280_BinaryTreeProject_2.exe
-  CS280_BinaryTreeProject_2.vcxproj -> C:\Users\Brian\onedrive\documents\visual studio 2015\Projects\CS280_BinaryTreeProject_2\Debug\CS280_BinaryTreeProject_2.pdb (Full PDB)
+  CS280_BinaryTreeProject_2.vcxproj -> C:\Users\Brian\OneDrive\Documents\Visual Studio 2015\Projects\CS280_BinaryTreeProject_2\Debug\BinarySearchTree.exe
+  CS280_BinaryTreeProject_2.vcxproj -> C:\Users\Brian\OneDrive\Documents\Visual Studio 2015\Projects\CS280_BinaryTreeProject_2\Debug\BinarySearchTree.pdb (Full PDB)
